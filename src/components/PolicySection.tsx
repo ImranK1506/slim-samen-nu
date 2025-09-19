@@ -39,15 +39,15 @@ const PolicySection = () => {
 
         <div className="grid gap-8 max-w-4xl mx-auto">
           {policies.map((policy, index) => (
-            <div key={index} className="flex items-start gap-6 group">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+            <div key={index} className="flex flex-col items-center text-center group">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors mb-4">
                 <Check className="w-5 h-5 text-primary" />
               </div>
-              <div className="pt-1">
+              <div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   {policy.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed max-w-md">
                   {policy.description}
                 </p>
               </div>
