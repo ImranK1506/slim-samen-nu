@@ -22,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -56,6 +57,12 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        // Brand specific colors
+        brand: {
+          green: "hsl(150 100% 20%)",
+          "green-dark": "hsl(150 100% 15%)",
+          grey: "hsl(0 0% 7%)",
         },
       },
       borderRadius: {

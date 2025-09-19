@@ -8,33 +8,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* De Slimme Samenleving Color System */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 7%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 7%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 7%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Dark Green #006633 */
+    --primary: 150 100% 20%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 150 100% 15%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Light grey for subtle elements */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 7%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted: Subtle greys */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent: Slightly lighter green for highlights */
+    --accent: 150 100% 25%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 150 100% 20%;
+
+    /* Political Brand Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(150 100% 20%), hsl(150 100% 15%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 98%));
+    
+    /* Shadows with brand color */
+    --shadow-brand: 0 10px 30px -10px hsl(150 100% 20% / 0.1);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.1);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
@@ -99,7 +116,43 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Brand Button Variants */
+  .btn-hero {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 
+           shadow-[var(--shadow-brand)] transition-[var(--transition-smooth)]
+           font-semibold px-8 py-3 rounded-lg;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground
+           transition-[var(--transition-smooth)] font-semibold px-8 py-3 rounded-lg;
+  }
+
+  /* Political Card Styles */
+  .political-card {
+    @apply bg-card border border-border rounded-xl p-6 
+           shadow-[var(--shadow-card)] hover:shadow-xl
+           transition-[var(--transition-smooth)];
+  }
+
+  /* Check List Items */
+  .policy-check {
+    @apply flex items-start gap-3 p-4 rounded-lg hover:bg-muted/50
+           transition-[var(--transition-smooth)];
+  }
+  
+  .check-icon {
+    @apply w-6 h-6 rounded-full bg-primary text-primary-foreground 
+           flex items-center justify-center flex-shrink-0 mt-0.5;
   }
 }
