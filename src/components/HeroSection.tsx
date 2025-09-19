@@ -11,8 +11,6 @@ const HeroSection = () => {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-primary/5" />
         <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-accent/5" />
-        <div className="absolute top-1/3 left-1/4 w-2 h-2 bg-primary rounded-full animate-pulse" />
-        <div className="absolute top-2/3 right-1/3 w-1 h-1 bg-accent rounded-full animate-pulse delay-1000" />
       </div>
       
       {/* Content */}
