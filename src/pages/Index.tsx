@@ -4,7 +4,7 @@ import MissionSection from "@/components/MissionSection";
 import PolicySection from "@/components/PolicySection";
 import NewsSection from "@/components/NewsSection";
 import JoinSection from "@/components/JoinSection";
-import TeamSection from "@/components/TeamSection";
+import AIPrinciplesSection from "@/components/AIPrinciplesSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -16,7 +16,7 @@ const Index = () => {
       <PolicySection />
       <NewsSection />
       <JoinSection />
-      <TeamSection />
+      <AIPrinciplesSection />
       <Footer />
     </div>
   );

@@ -11,7 +11,7 @@ const Navigation = () => {
     { href: "#programma", label: "Wat Wij Willen" },
     { href: "#nieuws", label: "Nieuws" },
     { href: "#doe-mee", label: "Doe mee" },
-    { href: "#team", label: "Team" },
+    { href: "#ai-principes", label: "AI Principes" },
     { href: "#contact", label: "Contact" },
   ];
 

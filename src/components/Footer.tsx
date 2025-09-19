@@ -7,7 +7,7 @@ const Footer = () => {
     { name: "Wat Wij Willen", href: "#programma" },
     { name: "Nieuws", href: "#nieuws" },
     { name: "Doe mee", href: "#doe-mee" },
-    { name: "Team", href: "#team" },
+    { name: "AI Principes", href: "#ai-principes" },
   ];
 
   const legal = [
