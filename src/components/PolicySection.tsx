@@ -37,17 +37,17 @@ const PolicySection = () => {
           </p>
         </div>
 
-        <div className="space-y-6">
+        <div className="grid gap-8 max-w-4xl mx-auto">
           {policies.map((policy, index) => (
-            <div key={index} className="policy-check">
-              <div className="check-icon">
-                <Check size={16} />
+            <div key={index} className="flex items-start gap-6 group">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <Check className="w-5 h-5 text-primary" />
               </div>
-              <div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">
+              <div className="pt-1">
+                <h3 className="text-xl font-semibold text-foreground mb-3">
                   {policy.title}
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed">
                   {policy.description}
                 </p>
               </div>
