@@ -5,6 +5,7 @@ import PolicySection from "@/components/PolicySection";
 import NewsSection from "@/components/NewsSection";
 import JoinSection from "@/components/JoinSection";
 import AIPrinciplesSection from "@/components/AIPrinciplesSection";
+import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -17,6 +18,7 @@ const Index = () => {
       <NewsSection />
       <JoinSection />
       <AIPrinciplesSection />
+      <FAQSection />
       <Footer />
     </div>
   );
