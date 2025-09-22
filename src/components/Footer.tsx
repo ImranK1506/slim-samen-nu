@@ -29,10 +29,10 @@ const Footer = () => {
                 De Slimme Samenleving
               </div>
               <p className="text-background/80 text-sm leading-relaxed">
-                Samen slimmer, samen sterker. Voor een eerlijke, efficiënte en 
+                Samen slimmer, samen sterker. Voor een eerlijke, efficiënte en
                 toekomstgerichte samenleving.
               </p>
-              
+
               {/* Social Links */}
               <div className="flex space-x-4 mt-6">
                 <a href="#" className="text-background/60 hover:text-primary transition-colors">
@@ -116,7 +116,7 @@ const Footer = () => {
         <div className="border-t border-background/20 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-background/60 text-sm">
-              © 2024 De Slimme Samenleving. Alle rechten voorbehouden.
+              © {new Date().getFullYear()} De Slimme Samenleving. Alle rechten voorbehouden.
             </p>
             <p className="text-background/60 text-sm mt-2 md:mt-0">
               Gebouwd voor een slimmere toekomst 🇳🇱
