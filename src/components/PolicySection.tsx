@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const PolicySection = () => {
   const policies = [
@@ -56,9 +57,9 @@ const PolicySection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="btn-hero">
+          <Button className="btn-hero">
             Lees het volledige programma
-          </button>
+          </Button>
         </div>
       </div>
     </section>

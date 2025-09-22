@@ -1,4 +1,5 @@
 import { Shield, Eye, Users, Zap, Heart, Brain } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const AIPrinciplesSection = () => {
   const principles = [
@@ -77,9 +78,9 @@ const AIPrinciplesSection = () => {
               wordt gedocumenteerd en gepubliceerd. Burgers hebben het recht om te weten 
               hoe en waarom beslissingen worden genomen die hun leven beïnvloeden.
             </p>
-            <button className="btn-secondary mt-6">
+            <Button variant="outline" className="btn-secondary mt-6">
               Lees onze AI Ethiek Code
-            </button>
+            </Button>
           </div>
         </div>
       </div>

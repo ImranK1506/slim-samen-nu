@@ -144,15 +144,4 @@ All colors MUST be HSL.
            shadow-[var(--shadow-card)] hover:shadow-xl
            transition-[var(--transition-smooth)];
   }
-
-  /* Check List Items */
-  .policy-check {
-    @apply flex items-start gap-3 p-4 rounded-lg hover:bg-muted/50
-           transition-[var(--transition-smooth)];
-  }
-  
-  .check-icon {
-    @apply w-6 h-6 rounded-full bg-primary text-primary-foreground 
-           flex items-center justify-center flex-shrink-0 mt-0.5;
-  }
 }
