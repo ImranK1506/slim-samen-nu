@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Mail, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 const Footer = () => {
   const navigation = [
@@ -95,17 +95,6 @@ const Footer = () => {
                 <div className="flex items-center text-background/80 text-sm">
                   <Mail size={16} className="mr-3 text-primary" />
                   info@slimmesamenleving.nl
-                </div>
-                <div className="flex items-center text-background/80 text-sm">
-                  <Phone size={16} className="mr-3 text-primary" />
-                  +31 (0)20 123 4567
-                </div>
-                <div className="flex items-start text-background/80 text-sm">
-                  <MapPin size={16} className="mr-3 text-primary mt-0.5" />
-                  <div>
-                    Keizersgracht 123<br />
-                    1015 CJ Amsterdam
-                  </div>
                 </div>
               </div>
             </div>
