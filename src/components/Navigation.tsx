@@ -6,7 +6,6 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { href: "#home", label: "Home" },
     { href: "#missie", label: "Missie & Visie" },
     { href: "#programma", label: "Wat Wij Willen" },
     { href: "#nieuws", label: "Nieuws" },
@@ -22,9 +21,9 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-2xl font-bold text-primary">
+            <a href="#home" className="text-2xl font-bold text-primary hover:opacity-80 transition-opacity">
               De Slimme Samenleving
-            </div>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
