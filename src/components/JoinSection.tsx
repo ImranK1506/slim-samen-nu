@@ -4,6 +4,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { z } from "zod";
+
+const joinFormSchema = z.object({
+  name: z.string().trim().min(1, "Naam is verplicht").max(100, "Naam mag maximaal 100 tekens bevatten"),
+  email: z.string().trim().email("Ongeldig e-mailadres").max(255, "E-mailadres mag maximaal 255 tekens bevatten"),
+  phone: z.string().trim().max(20, "Telefoonnummer mag maximaal 20 tekens bevatten").optional(),
+  motivation: z.string().trim().max(1000, "Motivatie mag maximaal 1000 tekens bevatten").optional(),
+});
 
 const JoinSection = () => {
   const [formData, setFormData] = useState({
@@ -17,12 +26,62 @@ const JoinSection = () => {
   
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Bedankt voor je aanmelding!",
-      description: "We nemen binnenkort contact met je op.",
-    });
+    
+    try {
+      // Validate form data
+      const validatedData = joinFormSchema.parse({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || undefined,
+        motivation: formData.motivation || undefined,
+      });
+
+      // Insert into Supabase
+      const { error } = await supabase
+        .from('join_submissions')
+        .insert({
+          name: validatedData.name,
+          email: validatedData.email,
+          phone: validatedData.phone || null,
+          motivation: validatedData.motivation || null,
+          newsletter: formData.newsletter,
+          volunteer: formData.volunteer,
+        });
+
+      if (error) throw error;
+
+      toast({
+        title: "Bedankt voor je aanmelding!",
+        description: "We nemen binnenkort contact met je op.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        motivation: "",
+        newsletter: true,
+        volunteer: false
+      });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast({
+          title: "Validatiefout",
+          description: error.errors[0].message,
+          variant: "destructive",
+        });
+      } else {
+        console.error('Error submitting form:', error);
+        toast({
+          title: "Er is iets misgegaan",
+          description: "Probeer het later opnieuw.",
+          variant: "destructive",
+        });
+      }
+    }
   };
 
   return (
