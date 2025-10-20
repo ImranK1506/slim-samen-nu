@@ -10,7 +10,7 @@ import { z } from "zod";
 const joinFormSchema = z.object({
   name: z.string().trim().min(1, "Naam is verplicht").max(100, "Naam mag maximaal 100 tekens bevatten"),
   email: z.string().trim().email("Ongeldig e-mailadres").max(255, "E-mailadres mag maximaal 255 tekens bevatten"),
-  phone: z.string().trim().max(20, "Telefoonnummer mag maximaal 20 tekens bevatten").optional(),
+  phone: z.string().trim().regex(/^(\+31|0)[0-9]{9}$/, "Ongeldig telefoonnummer (gebruik +31612345678 of 0612345678)").optional().or(z.literal("")),
   motivation: z.string().trim().max(1000, "Motivatie mag maximaal 1000 tekens bevatten").optional(),
 });
 
